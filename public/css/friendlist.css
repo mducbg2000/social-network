@@ -1,0 +1,54 @@
+
+/* friend list */
+.home__page .right .friend__container ul{
+    width: 100%;
+}
+
+.home__page .right .friend__container ul li{
+    width: 100%;
+    height: 45px;
+    list-style: none;
+    padding: 3px 0;
+}
+
+.home__page .right .friend__container .friend__item {
+    height: 100%;
+}
+
+
+.home__page .right .friend__container .friend__item .hover__friend__detail{
+    display: none;
+}
+
+.home__page .right .friend__container .friend__item .item{
+    display: flex;
+    height: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home__page .right .friend__container .friend__item .item:hover{
+    background: #efefef;
+}
+
+
+.home__page .right .friend__container .friend__item .item .image{
+    width: 50px;
+}
+
+.home__page .right .friend__container .friend__item .item .image img{
+    display: inline-block;
+    align-items: center;
+    margin-left: 5px;
+    margin-top: 3.5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.home__page .right .friend__container .friend__item .item .friend--name p{
+    line-height: 20px;
+    display: inline-block;
+    padding-top: 11px;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+}

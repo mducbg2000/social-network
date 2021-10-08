@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/group.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Profile</title>
+</head>
+<body>
+    <%- include('topbar', {user: currentUser}); %>
+    <div id="confirm_change_background">
+        <button class="confirm_button cancel" id="cancelBtn">Hủy</button>
+        <button class="confirm_button save" id="saveBtn">Lưu thay đổi</button>
+    </div>
+
+    <div class="avatar__container__top">
+        <div class="cover__photo__avatar">
+            <div class="cover__photo">
+                <div class="photo" onchange="preview_image_profile(event)">
+                    <img src="<%= user.background %>" alt="" id="output_image_profile"> 
+                    <!-- <img id="output_image_profile"> -->
+                    <%if (isYourself) { %>
+                        <div class="edit-cover-photo">
+                            <input type="file" id="imgupload"/>
+                            <img src="/images/camera.png" alt="">
+                            <p>Edit Cover Photo</p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="avatar_profile" onchange="preview_image_profile_avatar(event)">
+                    <%if (isYourself) { %>
+                        <div class="edit-avatar">
+                            <a href="">
+                                <input type="file" id="imguploadavatar"/>
+                                <img src="/images/camera.png" alt="">
+                            </a>
+                        </div>
+                    <% } %>
+                    <div class="photo-avatar">
+                        <img src="<%= user.avatar%>" alt="" id="output_image_avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user__name">
+            <h2 class="name"><%=user.name%></h2>
+            <p id="userId" data-user-id="<%= user._id %>" style="display: none;"></p>
+        </div>
+        <div class="information__bar">
+            <div class="right__button">
+                <ul>
+                    <%if (isYourself)
+                        {%>
+                            <li class="active">
+                                <div id="edit-profile">
+                                    <img src="/images/edit.png" alt="">
+                                    <p>Edit profile</p>
+                                </div>
+                            </li>
+                        <%}else if(isFollow){%>
+                            <!-- da add friend -->
+                            <!-- <li class="active">
+                                <a href="">
+                                    <div id="friend" onclick="unfollowUser('<%- user._id %>')">
+                                        <img src="/images/friends.png" alt="">
+                                        <p>Unfollow</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <div id="message">
+                                    <img src="/images/message.png" alt="">
+                                    <p>Message</p>
+                                </div>
+                            </li> -->
+                        <%}else{%>
+                            <!-- chua add friend -->
+                            <!-- <li class="active">
+                                <div id="add-friend" onclick="followUser('<%- user._id %>')">
+                                    <img src="/images/addfriend.png" alt="">
+                                    <p>Follow</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div id="message">
+                                    <img src="/images/message.png" alt="">
+                                    <p>Message</p>
+                                </div>
+                            </li> -->
+                        <%}
+                    %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main__content__container">
+        <div class="main__profile__content">
+            <div class="left__detail__infor">
+                <div class="basic__infor form__info">
+                    <div class="intro">
+                        <p class="title">Intro</p>
+                    </div>
+                    <div class="infor">
+                        <div class="item school">
+                            <img src="/images/school.png" alt="">
+                            <p>Đang học tại <b><%=user.school.name%></b></p>
+                        </div>
+                        <div class="item unit">
+                            <img src="/images/unit.png" alt="">
+                            <p>Chuyên ngành <b><%=user.major.name%></b></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="friend__list form__info">
+                    <div class="top">
+                        <div class="number-friend">
+                            <p class="title">Following</p>
+                            <span><%=following.length%> following</span>
+                        </div>
+                    </div>
+                    <div class="friends__container">
+                        <% following.forEach(friend => { %>
+                        <div class="friend">
+                            <a href="/profile/<%= friend._id %>">
+                                <img src="<%= friend.avatar %>" alt="">
+                                <p class="name_profile"><%= friend.name %></p>
+                            </a>
+                        </div>
+                        <% }) %>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="right__posts">
+                <%if (isYourself) { %>
+                    <%- include('newpost') %>
+                <% } %>
+                <div class="center__post" data-user-id="<%= user._id %>">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/post_profile.js" defer></script>
+<script src="js/preview_img_post.js" defer></script>
+<script src="js/preview_img_cmt.js" defer></script>
+<script src="js/comment.js" defer></script>
+<script src="js/up_post_profile_event.js" defer></script>
+<script src="js/up_comment_event.js" defer></script>
+<script src="js/preview_img_profile.js" defer></script>
+<script src="js/preview_img_avatar.js" defer></script>
+<script src="js/action_react.js" defer></script>
+<script src="js/follow_request.js" defer></script>
+<script src="js/delete_post.js" defer></script>
+</html>

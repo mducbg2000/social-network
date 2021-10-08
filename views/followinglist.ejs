@@ -1,0 +1,22 @@
+<ul>
+    <% following.forEach(f=> { %>
+        <li>
+            <div class="friend__item">
+                <div class="hover__friend__detail">
+                </div>
+                <a href="#" id="<%= f.id %>" class="friend__item_link">
+                    <div class="item" onclick="openFramechat('<%= user._id %>', '<%= f.id %>', '<%= f.name %>', '<%= f.avatar %>');">
+                        <div class="image">
+                            <img class="avatar" src="<%= f.avatar %>" alt="">
+                        </div>
+                        <div class="friend--name">
+                            <p><%= f.name %></p>
+                            <span id="<%= f.id %>_state" style="color:<%= (f.online === true)?'LimeGreen':'SlateGray' %>">&#9673</span>
+                            <span id="<%= f.id %>_notify" style="display: none">&#9993</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </li>
+    <% }) %>
+</ul>

@@ -1,0 +1,109 @@
+/* search-wrapper internal layout */
+.search-wrapper-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+}
+.search-wrapper-layout > input {
+    margin-left: 8px;
+    flex-grow: 1;
+}
+/* ============================== */
+
+.search-wrapper {
+    background-color: #F0F2F5;
+    border-radius: 20px;
+    cursor: text;
+}
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+.search-input {
+    border: none;
+    outline: none;
+    background: inherit;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+/* ============================================= */
+
+/*==================== Hint-list style ====================*/
+
+.hint-list-layout {
+    display: flex;
+    flex-direction: column;
+    overflow-y: overlay;
+    max-height: 390px;
+    padding: 0 10px 10px 10px;
+}
+
+.hint-list-positioned-ancestor {
+    position: relative;
+}
+
+.hint-list-layout--absolute {
+    width: 100%;
+    position: absolute;
+}
+
+.hint-list {
+    box-shadow: rgb(0 0 0 / 35%) -2px 12px 12px -2px;
+    background-color: #fff;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.hint-list::-webkit-scrollbar {
+    width: 18px;
+}
+
+.hint-list::-webkit-scrollbar-thumb  {
+    background-color: #b5b5b5;
+    border-radius: 12px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+}
+
+.hint-item-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+}
+
+.hint-item-layout > div {
+    margin-left: 12px;
+    flex-grow: 1;
+} 
+
+.hint-item-hyperlink {
+    text-decoration: none;
+    color: #000;
+}
+
+.hint-item {
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hint-item:hover {
+    background-color: #ffe7e7;
+}
+
+.hint-item__search-icon {
+    box-sizing: content-box;
+    padding: 6px;
+    border-radius: 100%;
+    background-color: #ff7e7e;
+}
+
+.hint-item__content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 21px;
+}
+
+/* ======================================================= */

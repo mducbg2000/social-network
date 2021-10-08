@@ -1,0 +1,30 @@
+<div class="item-list">
+    <% results.forEach(user => {%>
+        <% if (user.contain) { %>
+            <div class="item">
+                <img src="<%= user.avatar%>" class="item__avatar">
+                <div class="item__text-wrapper">
+                    <a class="item__name" href="/profile/<%= user._id %>"><%= user.name %></a>
+                    <!-- <div class="item__description"><%= user.followers.length %> Followers</div> -->
+                </div>
+                <div class="item__icon item__icon--joined item__icon-tooltip-ancestor" onclick="unfollowUser(event, '<%- user._id %>')">
+                    <img src="/images/icons/followed.png">
+                    <div class="item__icon-tooltip">Followed</div>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="item">
+                <img src="<%= user.avatar%>" class="item__avatar">
+                <div class="item__text-wrapper">
+                    <a class="item__name" href="/profile/<%= user._id %>"><%= user.name %></a>
+                    <!-- <div class="item__description"><%= user.followers.length %> Followers</div> -->
+                </div>
+                <div class="item__icon item__icon--not-joined item__icon-tooltip-ancestor" onclick="followUser(event, '<%- user._id %>')">
+                    <img src="/images/icons/follow.png">
+                    <div class="item__icon-tooltip">Follow</div>
+                </div>
+            </div>
+        <% } %>
+    <% }) %>
+    <div>You reach the end of results.</div>
+</div>

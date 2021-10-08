@@ -1,0 +1,12 @@
+<% commentList.forEach(cmt => { %>
+    <div class="commented">
+        <div class="avatar">
+            <img src="<%= cmt.owner.avatar %>" alt="">
+        </div>
+        <div class="content-text-cmt">
+            <h1><%= cmt.owner.name %></h1>
+            <p><%= cmt.content %></p>
+            <img src="<%= cmt.img %>" alt="">
+        </div>
+    </div>
+<% }) %>

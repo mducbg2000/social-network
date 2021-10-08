@@ -1,0 +1,349 @@
+/*==================== normalize css ==================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* ============================================================ */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.global-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.global-wrapper > :first-child {
+    flex: 0 0 360px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.global-wrapper > :nth-child(2) {
+    flex-grow: 1;
+}
+
+.sidebar {
+    background-color: #fff;
+}
+
+.sidebar > :first-child {
+    height: 56px;
+}
+
+.sidebar >:nth-child(2) {
+    height: calc(100% - 56px);
+}
+
+.sidebar__navigation-wrapper {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+}
+
+.sidebar__navigation-wrapper > * {
+    margin-left: 20px;
+}
+
+.sidebar__navigation-wrapper > :first-child  {
+    display: block;
+    width: 40px; height: 40px;
+}
+
+.sidebar__navigation-wrapper > :nth-child(2) {
+    display: block;
+    width: 50px;
+}
+
+.sidebar__remove-icon {
+    width: inherit;
+    background-color: #999999;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.sidebar__remove-icon:hover {
+    background-color: #868686;
+}
+
+.sidebar__body-wrapper {
+    position: relative;
+    padding-top: 24px;
+}
+
+.sidebar__body-wrapper > * {
+    padding: 0 16px;
+}
+
+.sidebar__body-wrapper > :nth-child(2) {
+    margin-top: 40px;
+}
+
+.sidebar__body-wrapper > :nth-child(3) {
+    margin-top: 30px;
+}
+
+.sidebar__body-wrapper > :last-child {
+    width: 100%;
+}
+
+.sidebar__title {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.sidebar__user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__user-wrapper > :first-child {
+    width: 50px; height: 50px;
+}
+
+.sidebar__user-wrapper > :nth-child(2) {
+    margin-left: 12px;
+}
+
+.user-avatar {
+    border: 1px solid #c1c1c1;
+    border-radius: 100%;
+    object-fit: contain;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-info > :nth-child(2) {
+    margin-top: 8px;
+}
+
+.user-info__name {
+    font-weight: 500;
+    color: #000;
+}
+
+.user-info__sub-info {
+    font-size: 13px;
+    color: #65676b;
+}
+
+.sidebar__input-group > input {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.sidebar__input {
+    padding: 16px 14px;
+    border: 1px solid #afafaf;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #868686;
+    transition: border-color 0.2s linear;
+}
+
+.sidebar__input:focus {
+    border-color: #ff6c6c;
+}
+
+.sidebar__button-wrapper {
+    position: absolute;
+    bottom: 0;
+    padding: 16px;
+    box-shadow: 0 -1px 12px rgb(0 0 0 / 10%);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.not-allowed-btn {
+    color: #bcc0c4;
+    background-color: #e4e6eb;
+    cursor: not-allowed;
+}
+
+.allowed-btn {
+    color: #fff;
+    background-color: #f21818;
+    cursor: pointer
+}
+
+.allowed-btn:hover {
+    background-color: #cc1313;
+}
+
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #f0f2f5;
+}
+
+.preview-wrapper {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 20%);
+}
+
+.preview-wrapper > :nth-child(2) {
+    margin-top: 20px;
+    width: 940px;
+}
+
+.preview-wrapper__title {
+    font-weight: 500;
+}
+
+.preview-box {
+    border: 1px solid #e3e3e3;
+    border-top: none;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.preview-box--filtered {
+    filter: grayscale(1) opacity(0.5);
+}
+
+.preview-box__introduction-wrapper {
+    position: relative;
+    padding-bottom: 35px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 8px 12px -2px;
+}
+
+.preview-box__introduction-wrapper> img {
+    width: 100%;
+    min-height: 350px;
+    max-height: 500px;
+}
+
+.preview-box__introduction-wrapper > :nth-child(2) {
+    margin-top: 20px;
+}
+
+.preview-box__group-img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.preview-box__group-info-wrapper {
+    padding-left: 20px;
+}
+
+.preview-box__group-info-wrapper > :nth-child(2) {
+    margin-top: 10px;
+}
+
+.preview-box__group-name {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.preview-box__sub-info > span {
+    margin: 0 5px;
+    font-weight: 700;
+    vertical-align: text-top;
+}
+
+.preview-box__content-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f0f2f5;
+}
+
+.preview-box__content-wrapper > :first-child {
+    width: 69%;
+}
+
+.post-creator-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+}
+
+.post-creator-wrapper > img {
+    width: 45px; height: 45px;
+}
+
+.post-creator-wrapper > :nth-child(2) {
+    flex-grow: 1;
+    height: fit-content;
+    margin-left: 10px;
+}
+
+.post-creator__avatar {
+    border-radius: 100%;
+}
+
+.post-creator {
+    padding: 12px 15px;
+    border-radius: 20px;
+    background-color: #f0f2f5;
+    color: #65676b;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/changePwd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Change password</title>
+</head>
+<body>
+    <div class="global-wrapper">
+        <form onsubmit="return isValidToSubmit()" method="POST" action="#">
+            <div class="form__title">Change Password</div>
+            <div class="form__body">
+                <div class="input-wrapper">
+                    <div class="input-description">Enter your new password</div>
+                    <label class="input-with-eye">
+                        <input class="password" type="password" name="newPwd" placeholder="New password" required>
+                        <i class="fas fa-eye-slash"></i>
+                    </label>
+                </div>
+                <div class="input-wrapper input-wrapper--mt">
+                    <div class="input-description">Confirm your password</div>
+                    <label class="input-with-eye">
+                        <input class="cf-password" type="password" placeholder="Entered Password" required>
+                        <i class="fas fa-eye-slash"></i>
+                    </label>
+                    <div class="alert-area" id="cfpass-alert">
+                        <img src="/images/alert.png" alt="alert" class="alert-icon"></img>
+                        <div class="alert-message">Passwords do not match</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__btn-group">
+                <button type="button" onclick="window.location.href='/login'">Cancel</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/changePwd_handle_events.js"></script>
+    <script src="/js/changePwd_catch_events.js"></script>
+</body>
+</html>

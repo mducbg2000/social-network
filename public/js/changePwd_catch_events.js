@@ -1,0 +1,2 @@
+for (let i = 0; i < eyeIcon.length; ++i) eyeIcon[i].addEventListener("click", () => eyeEventHandler(eyeIcon[i], inputArea[i]));
+cfPassword.onblur = () => alertAreaHandler(!isPasswordConfirmed(password.value, cfPassword.value), alertAreas[0]);

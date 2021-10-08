@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social media</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/topbar.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="/css/friendlist.css">
+    <link rel="stylesheet" href="/css/group.css">
+    <link rel="stylesheet" href="/css/framechat.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!--    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">-->
+    <!--    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/js/all.js">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+    localStorage.setItem('userId',  '<%= user._id%>')
+</script>
+<body>
+    <%- include('topbar', {user: user, query: query, queryPath: queryPath}); %>
+    <div class="home__page">
+        <div class="left">
+            <%- include('grouplist', {groups: groups, query: query})%>
+        </div>
+        <div class="center">
+            <%- include('newpost') %>
+        </div>
+        <div class="right">
+            <div class="friend__container">
+                <div class="title">
+                    <h3>Following List</h3>
+                </div>
+                <%- include('followinglist', {following: following}); %>
+            </div>
+        </div>
+        <div id="framechat-area"></div>
+    </div>
+</body>
+</div>
+</body>
+
+<script src="/js/livesearch.js"></script>
+
+<script src="js/home.js" defer></script>
+<script src="js/post.js" defer></script>
+<script src="js/preview_img_post.js" defer></script>
+<script src="js/preview_img_cmt.js" defer></script>
+<script src="js/comment.js" defer></script>
+<script src="js/up_comment_event.js" defer></script>
+<script src="js/up_post_event.js"></script>
+<script src="/socket.io/socket.io.min.js">
+</script>
+<script src="/js/framechat.js"></script>
+<script src="js/action_react.js" defer></script>
+<script src="js/delete_post.js" defer></script>
+</html>

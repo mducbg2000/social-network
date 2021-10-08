@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <title>Đăng ký</title>
+    </head>
+    <body>
+        <div class="global-container">
+            <div class="signup-form">
+                <div class="signup-form__header">
+                    <a href="/"><img class="header__logo" src="/images/logo.png" alt="logo"></a>
+                    <div>Đăng ký nhanh chóng, dễ dàng</div>
+                </div>
+                <div class="signup-form__body">
+                    <div class="body__group-of-inputs">
+                        <div class="name-input-wrapper">
+                            <div class="input-wrapper--col">
+                                <div>Họ và tên (*)</div>
+                                <input type="text" name="fullname" required>
+                                <div class="alert-area">
+                                    <img src="/images/alert.png" alt="alert" class="alert-icon"></img>
+                                    <div class="alert-message">Họ tên không hợp lệ</div>
+                                </div>
+                            </div>
+                            <div class="input-wrapper--col input-wrapper--ml">
+                                <div>Mã số sinh viên (*)</div>
+                                <input type="text" name="mssv" required>
+                                <div class="alert-area">
+                                    <img src="/images/alert.png" alt="alert" class="alert-icon"></img>
+                                    <div class="alert-message">Mã số sinh viên không hợp lệ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-wrapper--col input-wrapper--mt">
+                            <div>Email của bạn (*)</div>
+                            <input type="email" name="email" required>
+                            <div class="alert-area">
+                                <img src="/images/alert.png" alt="alert" class="alert-icon"></img>
+                                <div class="alert-message">Định dạng email không hợp lệ</div>
+                            </div>
+                        </div>
+                        <div class="input-wrapper--col input-wrapper--mt">
+                            <div>Mật khẩu (*)</div>
+                            <div class="input-with-eye">
+                                <input type="password" name="password" required>
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                            <div class="alert-area" id="pass-alert">
+                                <img src="/images/alert.png" alt="alert" class="alert-icon"></img>
+                                <div class="alert-message">Mật khẩu không đạt yêu cầu</div>
+                            </div>
+                            <div class="input-note">Sử dụng 8 ký tự trở lên, có đầy đủ chữ cái thường, viết hoa, chữ số và kí tự đặc biệt. Ví dụ: helloWorld@123</div>
+                        </div>
+                        <div class="input-wrapper--col input-wrapper--mt">
+                            <div>Xác nhận mật khẩu (*)</div>
+                            <div class="input-with-eye">
+                                <input type="password" name="cf-password" required>
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                            <div class="alert-area" id="cfpass-alert">
+                                <img src="/images/alert.png" alt="alert" class="alert-icon"></img>
+                                <div class="alert-message">Mật khẩu không trùng khớp</div>
+                            </div>
+                        </div>
+                        <div class="input-wrapper--col input-wrapper--mt">
+                            <div>Ngày/Tháng/Năm sinh (*)</div>
+                            <div class="option-wrapper">
+                                <select id="date" required>
+                                </select>
+                                <select id="month" required>
+                                    <option value="1">Tháng 1</option>
+                                    <option value="2">Tháng 2</option>
+                                    <option value="3">Tháng 3</option>
+                                    <option value="4">Tháng 4</option>
+                                    <option value="5">Tháng 5</option>
+                                    <option value="6">Tháng 6</option>
+                                    <option value="7">Tháng 7</option>
+                                    <option value="8">Tháng 8</option>
+                                    <option value="9">Tháng 9</option>
+                                    <option value="10">Tháng 10</option>
+                                    <option value="11">Tháng 11</option>
+                                    <option value="12">Tháng 12</option>
+                                </select>
+                                <select id="year" required>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-wrapper--col input-wrapper--mt">
+                            <div>Chuyên ngành (*)</div>
+                            <select id="major-list" name="major" required>
+                                <% codes.forEach(code => {%>
+                                    <option><%= code%></option>
+                                <%}) %>
+                            </select>
+                        </div>
+                        <div class="input-wrapper--col input-wrapper--mt">
+                            <div>Giới tính (*)</div>
+                            <div class="option-wrapper">
+                                <div class="option">
+                                    <input id="male" name="gender" type="radio" value="male" checked>
+                                    <label for="male">Nam</label>
+                                </div>
+                                <div class="option">
+                                    <input id="female" name="gender" type="radio" value="female">
+                                    <label for="female">Nữ</label>
+                                </div>
+                                <div class="option">
+                                    <input id="non-binary" name="gender" type="radio" value="non-binary">
+                                    <label for="non-binary">Khác</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body__terms">Khi nhấn nút Đăng Ký bạn đồng ý với các <a href="">Điều Khoản</a>, <a href="">Chính sách dữ liệu</a> và <a href="">Chính sách về Cookie.</a></div>
+                    <button class="body__submit-button" type="submit">Đăng ký</button>
+                </div>
+                <div class="signup-form__footer">Bạn đã có tài khoản? <a href="/login">Đăng nhập ngay</a>.</div>
+            </div>
+        </div>
+        <script src="/js/signup_runonce.js"></script>
+        <script src="/js/validate.js"></script>
+        <script src="/js/signup_handle_events.js"></script>
+        <script src="/js/signup_catch_events.js"></script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            display: flex;
+        }
+        .level1 {
+            width: fit-content;
+            border: 1px solid #000;
+            background-color: rgb(88, 88, 88);
+        }
+        .level2 {
+            width: 350px; height: 350px;
+            background-color: rgb(248, 113, 113);
+            margin: 30px;
+            padding: 30px;
+        }
+        .level3 {
+            width: 200px; height: 200px;
+            background-color: rgb(123, 255, 255);
+        }
+        #event-res {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="level1">
+        <div class="level2">
+        </div>
+        <div class="level2">
+            <div class="level3"></div>
+            <div class="lv3-sibling"></div>
+        </div>
+    </div>
+    <h2 id="event-res">hello</h2>
+    <script>
+        let level1 = document.querySelector('.level1');
+        let result = document.getElementById('event-res');
+
+        let level3 = document.querySelector('.level3');
+        level3.onclick = function(event) {
+            console.log(event);
+        };
+    </script>
+</body>
+</html>

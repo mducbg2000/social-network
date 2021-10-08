@@ -1,0 +1,215 @@
+
+/* frame_chat */
+
+.frame__chat__container{
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    height: 450px;
+    width: auto;
+    background-color: white;
+    display: none;
+}
+
+.frame__chat__container .frame__chat{
+    height: 100%;
+    width: 310px;
+    border-radius: 10px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.46);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.46);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.46);
+}
+
+.frame__chat .frame_top{
+    display: flex;
+    height: 48px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.frame__chat .frame_top .left{
+    display: flex;
+    height: 44px;
+    width: 50%;
+    border-radius: 3px;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.frame__chat .frame_top .left img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 8px 5px 8px 5px;
+}
+
+.frame__chat .frame_top .left .text{
+    height: 32px;
+    margin-top: 8px;
+    margin-left: 3px;
+    font-family: inherit;
+}
+.frame__chat .frame_top .left .text span{
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.frame__chat .frame_top .left:hover{
+    background-color: rgb(248, 245, 245);
+    transition: 0.3s;
+}
+.frame__chat .frame_top .right{
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+}
+.frame__chat .frame_top .right .icon{
+    height: 26px;
+    width: 26px;
+    margin: 3px;
+    margin-top: 11px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.frame__chat .frame_top .right .icon:hover{
+    background-color: rgb(236, 234, 234);
+}
+
+.input__message{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    height: 52px;
+}
+
+.input__message .file_icon{
+    width: 36px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.1s;
+    margin-top: 11px;
+}
+
+.input__message .file_icon label{
+    cursor: pointer;
+}
+
+.input__message .file_icon input{
+    display: none;
+}
+
+.input__message .file_icon img{
+    width: 22px;
+    height: 22px;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.input__message .input{
+    display: flex;
+    background-color: rgb(236, 234, 234);
+    height: 30px;
+    margin-top: 11px;
+    border-radius: 15px;
+}
+.input__message .input img{ 
+    width: 22px;
+    height: 22px;
+    margin-top: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.input__message .input input{
+    outline: none !important;
+    border: 0 solid;
+    background-color: rgb(236, 234, 234);
+    margin-left: 12px;
+}
+
+.input__message .send_button{
+    width: 45px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 11px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.input__message .send_button svg{
+    margin-left: 13px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+/* message part */
+.message__container{
+    width: 98%;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    display: inline-block;
+}
+
+.message__container .received{
+    float: left;
+    width: 65%;
+    display: flex;
+    position: relative;
+}
+
+.message__container .received .avatar{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+.message__container .received .avatar img{
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.message__container .received .right__container{
+    margin-left: 40px;
+}
+
+.message__container .received .right__container .r_message{
+    padding: 2px;
+}
+
+.message__container .received .right__container .r_message p{
+    display: inline-block;
+    word-break: break-word;
+    line-height: 22px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.message__container .sent{
+    float: right;
+    width: 46%;
+    margin-left: 45%;
+}
+
+.message__container .sent .sent_messages_container .s_message{
+    padding: 2px;
+}
+
+.message__container .sent .sent_messages_container .s_message p{
+    display: inline-block;
+    word-break: break-word;
+    line-height: 22px;
+    background-color: rgb(243, 158, 158);
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 5px;
+}

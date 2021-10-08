@@ -1,0 +1,30 @@
+<div class="item-list">
+    <% results.forEach(group=> {%>
+        <% if (group.contain) { %>
+            <div class="item">
+                <img src="<%= group.avatar %>" class="item__avatar">
+                <div class="item__text-wrapper">
+                    <a class="item__name" href="/group/<%= group._id %>"><%= group.name%></a>
+                    <!-- <div class="item__description">Joined</div> -->
+                </div>
+                <div class="item__icon item__icon--joined item__icon-tooltip-ancestor" onclick="leaveGroup(event, '<%- group._id %>')">
+                    <img src="/images/icons/joined.png">
+                    <div class="item__icon-tooltip">Joined</div>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="item">
+                <img src="<%= group.avatar %>" class="item__avatar">
+                <div class="item__text-wrapper">
+                    <a class="item__name" href="/group/<%= group._id %>"><%= group.name%></a>
+                    <!-- <div class="item__description">Not joined</div> -->
+                </div>
+                <div class="item__icon item__icon--not-joined item__icon-tooltip-ancestor" onclick="joinGroup(event, '<%- group._id %>')">
+                    <img src="/images/icons/not_joined.png">
+                    <div class="item__icon-tooltip">Join group</div>
+                </div>
+            </div>
+        <% } %>
+    <% }) %>
+    <div>You reach the end of results.</div>
+</div>

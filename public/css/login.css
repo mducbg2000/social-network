@@ -1,0 +1,85 @@
+body{
+    height: 100%;
+    margin: 0 0;
+    padding: 0 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+*{
+    margin: 0px;
+}
+.content{
+    width: 100%;
+    height: 570px;
+}
+img{
+    position: absolute;
+    width: 5.2in;
+    height: 1.584in;
+    left: 50%;
+    transform: translate(-50%);
+}
+.form-login{
+    width: 600px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background-color: rgb(231, 238, 252);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 5px;
+}
+
+.form-login input{
+    width: 80%;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #833633;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+}
+.form-login input[type = submit]{
+    background: #740303;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.form-login input[type = submit]:hover{
+    color: #000;
+    background-color: crimson;
+    color: white;
+}
+.form-login a{
+    color: rgb(40, 9, 151);
+    text-decoration: none;
+}
+.form-login a:hover{
+    text-decoration: underline;
+}
+#error{
+    color: #f02849;
+    font-size: 13px;
+}
+.footer{
+    width: 100%;
+    height: 60px;  
+    bottom: 0%;
+    position: absolute;
+    background-color: #97130f;
+}
+

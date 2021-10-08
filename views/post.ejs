@@ -1,0 +1,124 @@
+<% postList.forEach(post => { %>
+    <div class="card-post" id="container" data-display-none-id="<%= post._id%>">
+        <div class="wrapper">
+            <header>
+                <div class="avatar">
+                    <a href="/profile/<%=post.owner._id%>"><img src="<%= post.owner.avatar %>" alt=""></a>
+                </div>
+                <div class="name">
+                    <h1><a href="/profile/<%= post.owner._id %>"><%= post.owner.name %></a>
+                        <% if(post.group != null && showGroup) { %>
+                            &#9654 <a href="/group/<%= post.group._id %>"><%= post.group.name %></a>
+                        <% } %>
+                    </h1>
+                </div>
+                <% if(post.owner._id+0 == user._id+0) { %>
+                <div class="post-setting">
+                    <span class="dots" data-id-dropdown="<%= post._id %>" onclick="dropdownSetting(this)">
+                        <div class="icon-dots">
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                        </div>
+                        <div class="show-dropdown-post" data-show-dropdown="<%= post._id %>">
+                            <div class="line"><i class="fa fa-pencil" aria-hidden="true"></i><p>Edit post</p></div>
+
+                            <div class="line" data-delete-id="<%= post._id %>"><i class="fa fa-trash" aria-hidden="true"></i><p>Delete post</p></div>
+                        </div>
+                    </span>
+                </div>
+                <% } %>
+            </header>
+            <div class="id_post" name="id_post" style="display: none;"><p id="idPost"><%= post._id %></p></div>
+            <div class="content-text-post">
+                <p><%= post.content %></p>
+            </div>
+            <div class="content-img-post">
+                <img src="<%= post.img %>" alt="">
+            </div>
+            <% if(post.like.length > 0){ %>
+                <div class="total-like-post" data-pin="<%= post._id %>">
+                    <img src="/images/love.png" alt="">
+                    <div class="number-like" data-new-like="<%= post._id %>">
+                        <%= post.like.length %>
+                    </div>
+                </div>
+            <% } %>
+            <div class="total-like-post" data-pin="<%= post._id %>" style="display: none;">
+                <img src="/images/love.png" alt="">
+                <div class="number-like" data-new-like="<%= post._id %>">
+                    <%= post.like.length %>
+                </div>
+            </div>
+            <div class="bar-post">
+                <hr>
+                <div class="swap-like-cmt">
+                    <% var count = 0 %>
+                    <% for(i = 0; i < post.like.length; i++){ %>
+                        <% if(post.like[i]._id+0 == user._id+0){ %>
+                            <section class="like-cmt-post like">
+                                <i onclick="toggleLike(this)" data-like-id="<%= post._id %>" data-number-like="<%= post.like.length %>" class="far fa-heart fas">&nbsp;&nbsp;<span data-text="<%= post._id %>">Like</span></i>
+                            </section>
+                            <% break; %>
+                        <% } else { %>
+                            <% count++; %>
+                        <% } %>
+                    <% } %>
+                    <% if(count >= post.like.length){ %>
+                        <section class="like-cmt-post like">
+                            <i onclick="toggleLike(this)" data-like-id="<%= post._id %>" data-number-like="<%= post.like.length %>" class="far fa-heart" >&nbsp;&nbsp;<span>Like</span></i>
+                        </section>
+                    <% } %>
+                    &nbsp;
+                    <section class="like-cmt-post cmt" data-swrap-cmt-id="<%= post._id %>" data-time="0"
+                             onclick="showDivCmt(this)">
+                        <i class="far fa-comment"></i>&nbsp;&nbsp;
+                        <span>Comment</span>
+                    </section>
+                </div>
+            </div>
+            <hr>
+            <div class="comment" data-post-id="<%= post._id %>" style="display: none;">
+                <div class="old-comment" data-old-cmt-id="<%= post._id %>"></div>
+                <!-- Commented here-->
+                <!-- Viết comment -->
+                <div class="up-new-comment" data-new-cmt-id="<%= post._id %>"></div>
+                <div class="more-comment" data-more-id="<%= post._id %>" data-page="2" style="display: none;">
+                    <span style="cursor: pointer;">See more comments</span>
+                </div>
+                <div class="new-comment">
+                    <div class="avatar">
+                        <img src="<%= user.avatar %>" alt="">
+                    </div>
+                    <div class="wrap-new-cmt">
+                        <!-- <form> -->
+                        <div>
+                            <!-- <input id="text-cmt" type="text" placeholder="Viết bình luận ..."> -->
+                            <!-- <div class="edittext" contentEditable="true"></div> -->
+                            <div class="wrap-comment_image-cmt">
+                                <div id="wrap-textarea">
+                                    <textarea name="cmt-content" data-id="<%= post._id %>" class="form__text-comment"
+                                              placeholder="Write a comment ..."></textarea>
+                                </div>
+                                <div class="wrap_button_send">
+                                    <button data-id="<%= post._id %>" onclick="getIdCmt(this)" style="cursor: pointer;">
+                                        <img src="/images/send.png" alt=""></button>
+                                </div>
+                                <div class="media-cmt" style="cursor: pointer;">
+                                    <input name="img-cmt" type="file" data-cmt-img-id="<%= post._id %>"
+                                           onchange="preview_image_cmt(event, this)">
+                                </div>
+                            </div>
+                            <div class="wrap-img-cmt">
+                                <img name="output_image_cmt" data-preview-id="<%= post._id %>">
+                            </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }) %>
+
+
+
+
